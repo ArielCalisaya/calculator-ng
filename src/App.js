@@ -1,11 +1,7 @@
 import React from "react";
-
 import Calculator from "./components/Calculator";
 
-/*------------------------------------------------
-                    Material UI
-------------------------------------------------*/
-// import crateMuiTheme from '@material-ui/core/styles/createMuiTheme'
+// Material-UI theme creator
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import customTheme from "./util/theme.js";
 
