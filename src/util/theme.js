@@ -9,14 +9,11 @@ export default {
         secondary: {
           light: '#ff7961',
           main: '#d81b60',
-          dark: '#ba000d',
-          contrastText: '#fff'
+          dark: '#c30e54',
+          contrastText: '#000'
         }
       },
       styled: {
-        buttonSize: {
-            width: "400px",
-            height: "600px"
-          }
+
       }
 }

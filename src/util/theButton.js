@@ -1,19 +1,31 @@
-import React, { useState, useEffect } from 'react';
-
+import React, { useState, useEffect } from "react";
+import Button from "@material-ui/core/Button";
+import withStyles from "@material-ui/core/styles/withStyles";
 /*------------------------------------------------
                       Counter
 ------------------------------------------------*/
-export const Button = ({children}) => {
+const styles = (theme) => ({
+  ...theme.styled,
+});
 
-    let isOperator
+const TheButton = ({ children }) => {
+  let isOperator;
 
-    isOperator = val => {
-        return !isNaN(val) || val === "." || val === "=";
-    }
+  isOperator = (val) => {
+    return !isNaN(val) || val === "." || val === "=";
+  };
 
-    return(
-        <div className={`button ${isOperator (children) ? "" : "operator"}`}>
-            {children}
-        </div>
-    )
-}
+  return (
+    <Button
+
+      id="button"
+      size="large"
+      color="secondary"
+      variant="contained"
+      className={`button ${isOperator(children) ? "" : "operator"}`}
+    >
+      {children}
+    </Button>
+  );
+};
+export default withStyles(styles)(TheButton);

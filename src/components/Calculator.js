@@ -1,43 +1,40 @@
 import React from 'react';
-import { Button } from '../util/theButton';
+import  TheButton  from '../util/theButton';
 import withStyles from '@material-ui/core/styles/withStyles';
 
 const styles = (theme) => ({
   ...theme.styled
 })
 
-function Calculator(props) {
-  const {classes} = props
+const Calculator = () => {
+
     return (
-      <div className="App">
-      <div className={classes.buttonSize}>
+      <div className="container">
         <div className="row">
-        <Button>7</Button>
-        <Button>8</Button>
-        <Button>9</Button>
-        <Button>/</Button>
+        <TheButton>7</TheButton>
+        <TheButton>8</TheButton>
+        <TheButton>9</TheButton>
+        <TheButton>/</TheButton>
         </div>
         <div className="row">
-        <Button>4</Button>
-        <Button>5</Button>
-        <Button>6</Button>
-        <Button>X</Button>
+        <TheButton>4</TheButton>
+        <TheButton>5</TheButton>
+        <TheButton>6</TheButton>
+        <TheButton>X</TheButton>
         </div>
         <div className="row">
-        <Button>1</Button>
-        <Button>2</Button>
-        <Button>3</Button>
-        <Button>+</Button>
+        <TheButton>1</TheButton>
+        <TheButton>2</TheButton>
+        <TheButton>3</TheButton>
+        <TheButton>+</TheButton>
         </div>
         <div className="row">
-        <Button>.</Button>
-        <Button>0</Button>
-        <Button>-</Button>
-        <Button>=</Button>
+        <TheButton>.</TheButton>
+        <TheButton>0</TheButton>
+        <TheButton>-</TheButton>
+        <TheButton>=</TheButton>
         </div>
       </div>
-
-    </div>
   );
 }
 
