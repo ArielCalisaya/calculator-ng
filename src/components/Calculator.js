@@ -1,56 +1,58 @@
-import React from "react";
-import Input from "./Input";
+import React, { useState } from "react";
+// import Input from "./Input";
 import withStyles from "@material-ui/core/styles/withStyles";
+import Keyboard from './Keyboard'
 
-// Reusable Button
-import TheButton from "../util/theButton";
-
-// Get styles 
+// Get styles
 const styles = (theme) => ({
   ...theme.styled,
 });
 
-// Calculator and numbers row
-const Calculator = () => {
+const Calculator = (props) => {
+  const [data, setData] = useState("");
+  const { classes } = props;
+
+
+  let clearDigits = () => {
+    setData("")
+  }
+
+  let writeOnData = (e) => {
+    setData(e.target.value)
+  }
+
+  // It execute the calculation funcion on '=' button/value
+  let targetButton = (value) => {
+    if(value === '='){
+      calculateIt()
+    } else {
+      setData(data +value)
+    }
+  }
+
+  //eval calculates operations
+  let calculateIt = () => {
+    try {
+      setData(eval(data))
+    }
+    catch(e){
+      setData("Syntax ERROR")
+    }
+  }
+
   return (
     <div className="container">
       <div className="row">
-        <Input />
-      </div>
-      <TheButton
-        editButton={{ width: "100%", height: "32px", fontFamily: "cursive" }}
-      >
-        clear
-      </TheButton>
+        <input type="text" 
+        onChange={writeOnData}
+        value={data} 
+        className={classes.inputStyle}/>
 
-      <div className="row">
-        <TheButton>7</TheButton>
-        <TheButton>8</TheButton>
-        <TheButton>9</TheButton>
-        <TheButton>÷</TheButton>
       </div>
-
-      <div className="row">
-        <TheButton>4</TheButton>
-        <TheButton>5</TheButton>
-        <TheButton>6</TheButton>
-        <TheButton>X</TheButton>
-      </div>
-      <div className="row">
-        <TheButton>1</TheButton>
-        <TheButton>2</TheButton>
-        <TheButton>3</TheButton>
-        <TheButton>+</TheButton>
-      </div>
-      <div className="row">
-        <TheButton editButton={{ borderBottomLeftRadius: "12px" }}>.</TheButton>
-        <TheButton>0</TheButton>
-        <TheButton>=</TheButton>
-        <TheButton editButton={{ borderBottomRightRadius: "12px" }}>-</TheButton>
-      </div>
+        <Keyboard target={targetButton} clear={clearDigits}/>
     </div>
   );
 };
 
-// It connects with global Styles and export Function 
+// It connects with global Styles and export Function
 export default withStyles(styles)(Calculator);

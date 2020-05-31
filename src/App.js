@@ -11,6 +11,7 @@ function App() {
   return (
     <MuiThemeProvider theme={theme}>
       <div className="App">
+        <h1 className="calculator-title">Calculator</h1>
         <Calculator />
       </div>
     </MuiThemeProvider>

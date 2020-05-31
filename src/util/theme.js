@@ -1,5 +1,5 @@
 // Here is the global styles
- 
+
 export default {
   palette: {
     primary: {
@@ -27,6 +27,8 @@ export default {
       justifyContent: "flex-end",
       padding: "0.8em",
       alignItems: "center",
+      border: 0,
+      outline: 'none'
     },
   },
 };

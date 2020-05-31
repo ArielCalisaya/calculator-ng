@@ -11,7 +11,7 @@ const styles = (theme) => ({
   ...theme.styled,
 });
 
-const TheButton = ({ children, editButton }) => {
+const TheButton = ({ children, editButton, onClick, value, key }) => {
 
 /* 
   This variable allows to differentiate between operator 
@@ -27,6 +27,8 @@ const TheButton = ({ children, editButton }) => {
   return (
     <Button
       id="button"
+      onClick={onClick}
+      value={value}
       size="large"
       color="secondary"
       variant="contained"
