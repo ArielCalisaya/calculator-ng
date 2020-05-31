@@ -11,11 +11,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
 .App {
   display: grid;
   justify-content: center;
@@ -30,6 +25,9 @@ code {
   text-align: center;
 }
 
+.container {
+  margin-bottom: 30px;
+}
 
 #button {
   border-radius: 0px;
