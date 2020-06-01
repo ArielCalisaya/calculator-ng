@@ -2,16 +2,17 @@ import React from "react";
 // Reusable button
 import TheButton from "../util/theButton";
 
-
 //Keyboard settings
 
 const Keyboard = (props) => {
-    const {target, clear} = props
+  const { target, clear } = props;
 
-    let targetKey = (e) => {
-        target(e.currentTarget.value)
-        console.log(e.currentTarget.value)
-    }
+  let targetKey = (e) => {
+    target(e.currentTarget.value);
+    console.log(e.currentTarget.value);
+  };
+
+  //Here's the table content
 
   return (
     <div >

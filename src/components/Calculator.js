@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import Input from "./Input";
 import withStyles from "@material-ui/core/styles/withStyles";
-import Keyboard from './Keyboard'
+import Keyboard from "./Keyboard";
 
 // Get styles
 const styles = (theme) => ({
@@ -12,43 +12,43 @@ const Calculator = (props) => {
   const [data, setData] = useState("");
   const { classes } = props;
 
-
   let clearDigits = () => {
-    setData("")
-  }
+    setData("");
+  };
 
   let writeOnData = (e) => {
-    setData(e.target.value)
-  }
+    setData(e.target.value);
+  };
 
   // It execute the calculation funcion on '=' button/value
   let targetButton = (value) => {
-    if(value === '='){
-      calculateIt()
+    if (value === "=") {
+      calculateIt();
     } else {
-      setData(data +value)
+      setData(data + value);
     }
-  }
+  };
 
   //eval calculates operations
   let calculateIt = () => {
     try {
-      setData(eval(data))
+      setData(eval(data));
+    } catch (e) {
+      setData("Syntax ERROR");
     }
-    catch(e){
-      setData("Syntax ERROR")
-    }
-  }
+  };
 
   return (
     <div className="container">
       <div className="row">
-        <input type="text" 
-        onChange={writeOnData}
-        value={data} 
-        className={classes.inputStyle}/>
+        <input
+          type="text"
+          onChange={writeOnData}
+          value={data}
+          className={classes.inputStyle}
+        />
       </div>
-        <Keyboard target={targetButton} clear={clearDigits}/>
+      <Keyboard target={targetButton} clear={clearDigits} />
     </div>
   );
 };

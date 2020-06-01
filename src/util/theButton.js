@@ -12,8 +12,7 @@ const styles = (theme) => ({
 });
 
 const TheButton = ({ children, editButton, onClick, value }) => {
-
-/* 
+  /* 
   This variable allows to differentiate between operator 
   and number, therefore !isNaN, it returns a true boolean value, 
   if the value is a number next to the other specified variables 
