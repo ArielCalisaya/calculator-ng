@@ -47,7 +47,6 @@ const Calculator = (props) => {
         onChange={writeOnData}
         value={data} 
         className={classes.inputStyle}/>
-
       </div>
         <Keyboard target={targetButton} clear={clearDigits}/>
     </div>

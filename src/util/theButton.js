@@ -11,7 +11,7 @@ const styles = (theme) => ({
   ...theme.styled,
 });
 
-const TheButton = ({ children, editButton, onClick, value, key }) => {
+const TheButton = ({ children, editButton, onClick, value }) => {
 
 /* 
   This variable allows to differentiate between operator 
